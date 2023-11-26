@@ -4,7 +4,7 @@ const ClerkLayout = ({
   children:  React.ReactNode
 })=>{
   return (
-    <div className="h-screen flex justify-center items-center">
+    <div className="h-full flex justify-center items-center">
       {children}
     </div>
   );
