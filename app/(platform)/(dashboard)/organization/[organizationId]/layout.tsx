@@ -6,7 +6,7 @@ const OrganizationIdLayout = ({
   children:  React.ReactNode
 })=>{
   return (
-      <div className="felx gap-x-7">
+      <div className="w-full flex gap-x-7">
         <OrgControl/>
           {children}
       </div>
