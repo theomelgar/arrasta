@@ -13,7 +13,7 @@ import {
 import { Separator } from "@/components/ui/separator";
 import { useAction } from "@/hooks/use-action";
 import { List } from "@prisma/client";
-import { MoreHorizontal, X } from "lucide-react";
+import { MoreHorizontal, Trash, X, XCircle } from "lucide-react";
 import { ElementRef, useRef } from "react";
 import { toast } from "sonner";
 
@@ -94,7 +94,8 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
           <input hidden name="boardId" id="boardId" value={data.boardId} />
           <FormSubmit
             variant="ghost"
-            className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
+            className="rounded-none w-full h-auto p-2 px-5 justify-start 
+            font-normal text-sm"
           >
             Copy list...
           </FormSubmit>
@@ -105,10 +106,11 @@ export const ListOptions = ({ data, onAddCard }: ListOptionsProps) => {
           <input hidden name="boardId" id="boardId" value={data.boardId} />
           <FormSubmit
             variant="ghost"
-            className="rounded-none w-full h-auto p-2 px-5 justify-start font-normal text-sm"
+            className="rounded-none w-full h-auto p-2 px-5 justify-between 
+            font-normal text-sm"
           >
             Delete this list
-          </FormSubmit>
+            <Trash className="w-4 h-4 text-red-500"/> </FormSubmit>
         </form>
       </PopoverContent>
     </Popover>

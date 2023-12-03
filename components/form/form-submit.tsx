@@ -16,7 +16,8 @@ interface FormSubmitProps {
     | "secondary"
     | "ghost"
     | "link"
-    | "primary";
+    | "primary"
+    | "orange";
 }
 
 export const FormSubmit = ({
