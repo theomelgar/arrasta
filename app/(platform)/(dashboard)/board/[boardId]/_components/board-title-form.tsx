@@ -44,6 +44,9 @@ export const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
 
   const onSubmit = (formData: FormData) => {
     const title = formData.get("title") as string;
+    if (title === data.title) {
+      return disableEditing();
+    }
     execute({ title, id: data.id });
     if (title.length < 3) {
       toast.error("Title must be at least 3 characters");
@@ -67,10 +70,9 @@ export const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
             id="title"
             onBlur={onBlur}
             defaultValue={title}
-            className="text-lg font-bold px-[7px] py-1 h-7 
-          bg-transparent focus-visible:outline-none
-          focus-visible:ring-transparent border-none
-         "
+            className="text-lg px-[7px] py-1 h-7 font-bold border-transparent
+             hover:border-input focus:border-input transition truncate 
+             bg-transparent focus:bg-white"
           />
         </form>
         <div className="[&>div]:text-white">

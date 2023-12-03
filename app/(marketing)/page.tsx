@@ -32,7 +32,7 @@ const MarketingPage = () => {
         </div>
       </div>
       <div className={cn(
-        "text-sm md:text-xl text-neutral-400 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
+        "text-sm md:text-2xl text-neutral-900 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
         textFont.className,
       )}>
         Collaborate, manage projects and reach new productivity peaks. From high
@@ -40,7 +40,7 @@ const MarketingPage = () => {
         it all with Arrasta.
       </div>
       
-      <Button className="mt-6 bg-orange-400 text-black" size="lg" asChild>
+      <Button className="mt-6 bg-orange-400 text-black" variant="secondary" size="lg" asChild>
         <Link href={"/sign-up"}>Test it for free</Link>
       </Button>
     </div>
