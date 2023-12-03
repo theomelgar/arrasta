@@ -59,7 +59,7 @@ export const ListContainer = ({ data, boardId }: ListContainerProps) => {
     if (!destination) return;
 
     if (
-      destination.droppableId === source &&
+      destination.droppableId === source.droppableId &&
       destination.index === source.index
     ) {
       return;

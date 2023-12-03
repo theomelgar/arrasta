@@ -25,7 +25,7 @@ export const Header = ({ data }: HeaderProps) => {
         queryKey: ["card", data.id],
       });
 
-      toast.success(`Renamed to ${data.title}`);
+      toast.success(`Card ${data.title} updated`);
       setTitle(data.title);
     },
     onError: (error) => {
