@@ -7,6 +7,8 @@ import { revalidatePath } from "next/cache";
 import { CopyCard } from "./schema";
 import { createSafeAction } from "@/lib/create-safe-action";
 import { redirect } from "next/navigation";
+import { createAuditLog } from "@/lib/create-audit-log";
+import { ACTION, ENTITY_TYPE } from "@prisma/client";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
@@ -38,9 +40,9 @@ const handler = async (data: InputType): Promise<ReturnType> => {
     }
 
     const lastCard = await db.card.findFirst({
-      where: { 
-        listId:cardToCopy.listId
-       },
+      where: {
+        listId: cardToCopy.listId,
+      },
       orderBy: { order: "desc" },
       select: { order: true },
     });
@@ -53,7 +55,14 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         description: cardToCopy.description,
         order: newOrder,
         listId: cardToCopy.listId,
-        },
+      },
+    });
+
+    await createAuditLog({
+      entityTitle: card.title,
+      entityId: card.id,
+      entityType: ENTITY_TYPE.CARD,
+      action: ACTION.CREATE,
     });
   } catch (error) {
     return {
