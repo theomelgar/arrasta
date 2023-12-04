@@ -4,6 +4,7 @@ import { Poppins } from "next/font/google";
 import { Medal } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 const headingFont = localFont({
   src: "../../public/fonts/font.woff2",
 });
@@ -13,7 +14,7 @@ const textFont = Poppins({
 });
 const MarketingPage = () => {
   return (
-    <div className="flex items-center justify-center flex-col">
+    <div className="w-full h-full flex items-center justify-center flex-col gap-y-2">
       <div
         className={cn(
           "flex items-center justify-center flex-col",
@@ -22,7 +23,7 @@ const MarketingPage = () => {
       >
         <div className="mb-4 flex items-center border shadow-sm p-4 bg-amber-100 text-amber-700 rounded-full uppercase">
           <Medal className="h-6 w-6 mr-2" />
-          No 1 task management
+          #1 task management
         </div>
         <h1 className="text-3xl md:text-6xl text-center text-neutral-800 mb-6">
           Arrasta helps you in
@@ -31,17 +32,53 @@ const MarketingPage = () => {
           what matters.
         </div>
       </div>
-      <div className={cn(
-        "text-sm md:text-2xl text-neutral-900 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
-        textFont.className,
-      )}>
+      <div
+        className={cn(
+          "text-sm md:text-2xl text-neutral-900 mt-4 max-w-xs md:max-w-2xl text-center mx-auto",
+          textFont.className
+        )}
+      >
         Collaborate, manage projects and reach new productivity peaks. From high
         rises to the home office, the way your team works is unique - accomplish
         it all with Arrasta.
       </div>
-      
-      <Button className="mt-6 bg-orange-400 text-black" variant="secondary" size="lg" asChild>
+
+      <Button
+        className="text-2xl mt-6 bg-orange-400 text-black"
+        variant="orange"
+        size="lg"
+        asChild
+      >
         <Link href={"/sign-up"}>Test it for free</Link>
+      </Button>
+      <div className="text-white font-semibold text-2xl text-center mt-10 justify-center md:flex md:gap-x-10 md:mt-10">
+        <div>
+          <p className="text-3xl md:text-6xl bg-gradient-to-r from-orange-400 to-fuchsia-600 rounded-md pb-4 ">Organization Page</p>
+          <Image
+            src="/organization.png"
+            alt="demonstration"
+            height={900}
+            width={700}
+            className="mb-10 md:m-auto"
+          />
+        </div>
+        <div>
+          <p className="text-3xl md:text-6xl bg-gradient-to-r from-orange-400 to-fuchsia-600 rounded-md pb-4">Board Page</p>
+          <Image
+            src="/board.png"
+            alt="demonstration"
+            height={900}
+            width={700}
+          />
+        </div>
+      </div>
+      <Button
+        className="text-2xl mt-6 bg-orange-400 text-black"
+        variant="orange"
+        size="lg"
+        asChild
+      >
+        <Link href={"/sign-up"}>Explore now!</Link>
       </Button>
     </div>
   );
