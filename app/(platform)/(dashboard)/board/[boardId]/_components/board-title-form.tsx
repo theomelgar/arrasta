@@ -72,7 +72,7 @@ export const BoardTitleForm = ({ data }: BoardTitleFormProps) => {
             defaultValue={title}
             className="text-lg px-[7px] py-1 h-7 font-bold border-transparent
              hover:border-input focus:border-input transition truncate 
-             bg-transparent focus:bg-white"
+             bg-transparent "
           />
         </form>
         <div className="[&>div]:text-white">

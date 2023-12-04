@@ -8,6 +8,7 @@ import { Plus } from "lucide-react";
 import Link from "next/link";
 import { useLocalStorage } from "usehooks-ts";
 import { NavItem, Organization } from "./nav-item";
+import { Logo } from "@/components/logo";
 
 interface SidebarProps {
   storageKey?: string;
@@ -61,6 +62,9 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
   }
   return (
     <>
+      <div className="flex md:hidden">
+        <Logo />
+      </div>
       <div className="font-medium text-xs flex items-center mb-1">
         <span className="pl-4">Workspaces</span>
         <Button
