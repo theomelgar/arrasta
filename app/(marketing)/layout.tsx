@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import { Footer } from "./_components/footer";
 import { Navbar } from "./_components/navbar";
 
@@ -7,7 +8,9 @@ const MarketingLayout = ({ children }: { children: React.ReactNode }) => {
     style={{backgroundImage: `url(${"background.svg"})`}}>
       <Navbar/>
       <main className="pt-40 pb-40">
-        {children}</main>
+        {children}
+        <Analytics />
+        </main>
       <Footer></Footer>
     </div>
   );
